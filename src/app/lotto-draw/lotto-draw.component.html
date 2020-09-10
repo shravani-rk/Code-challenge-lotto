@@ -1,0 +1,25 @@
+<div class="lottery-list">
+  <h2>Lotterry draw and jackpot information</h2>
+  <ng-container *ngIf="totalList && totalList.Draws.length > 0; else noDraws">
+      <div class="container">
+          <div *ngFor= "let lottery of totalList.Draws">
+              <div class="lottery-details">
+                  <div class="row">
+                      <div class="col-sm-6">
+                          <h2>{{lottery.DrawDisplayName}}</h2>
+                      </div>
+                      <div class="col-sm-6">
+                          <p><label>Draw date: </label><span>{{lottery.DrawDate | date:'dd-MM-yyyy'}}</span></p>
+                          <p><label>Draw number: </label><span>{{lottery.DrawNumber}}</span></p>
+                          <p><label>Div1 Amount: </label><span>{{lottery.Div1Amount | currency : 'AU'}}</span></p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </ng-container>
+  <ng-template #noDraws>
+      <p>There are no draws at the moment.</p>
+  </ng-template>
+ 
+</div>
