@@ -13,7 +13,7 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`.
 
 Run `ng test` to execute the unit tests.
 
-Note: The actual code related to coding challenge is in the following files:
+## Note: The actual code related to coding challenge is in the following files:
 Interfaces: src/app/interfaces
 Component: src/app/lotto-draw
 Service: src/app/services

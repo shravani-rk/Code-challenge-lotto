@@ -1,15 +1,27 @@
-.container {
-    border: 1px solid grey;
-    margin-top: 20px;
-    .lottery-list {
-        margin: 20px;
-    }
+.lottery-container {
+    margin: 20px;
     .lottery-details {
-        border-bottom: 1px solid grey;
-        text-align: center;
+        display: table;
+        width: 100%;
+        border: 1px solid #808080;
+        .row{
+            display: table-row;
+            border: 1px solid #808080;
+            &:nth-child(odd){
+                background-color: #D8D8D8;
+            }
+            .col{
+                display: table-cell;
+                width: 33%;
+                border: 1px solid #808080;
+                padding: 10px;
+                text-align: center;
+            }
+        }
     }
     label {
         font-weight: bold;
         padding-right: 10px;
     }
 }
+

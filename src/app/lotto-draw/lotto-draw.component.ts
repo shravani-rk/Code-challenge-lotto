@@ -11,7 +11,6 @@ const lotteryEndpoint = 'https://data.api.thelott.com/sales/vmax/web/data/lotto/
 export class LottoDrawComponent implements OnInit {
   totalList: IGetOpenLotteriesDrawsResponse;
   payload: ILotteryRequest;
-
   constructor(private LotteryService:LotteryService) { }
 
   ngOnInit() {
@@ -24,7 +23,7 @@ export class LottoDrawComponent implements OnInit {
       };
     try{
       this.LotteryService.getLotteryResult(this.payload).subscribe((response: any) => {
-          this.totalList = response.json();
+          this.totalList = response;
 
         }, error => {
         console.log(error)

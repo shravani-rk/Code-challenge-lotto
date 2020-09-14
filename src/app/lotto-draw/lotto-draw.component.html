@@ -1,25 +1,34 @@
-<div class="lottery-list">
-  <h2>Lotterry draw and jackpot information</h2>
-  <ng-container *ngIf="totalList && totalList.Draws.length > 0; else noDraws">
-      <div class="container">
-          <div *ngFor= "let lottery of totalList.Draws">
-              <div class="lottery-details">
-                  <div class="row">
-                      <div class="col-sm-6">
-                          <h2>{{lottery.DrawDisplayName}}</h2>
-                      </div>
-                      <div class="col-sm-6">
-                          <p><label>Draw date: </label><span>{{lottery.DrawDate | date:'dd-MM-yyyy'}}</span></p>
-                          <p><label>Draw number: </label><span>{{lottery.DrawNumber}}</span></p>
-                          <p><label>Div1 Amount: </label><span>{{lottery.Div1Amount | currency : 'AU'}}</span></p>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </ng-container>
-  <ng-template #noDraws>
-      <p>There are no draws at the moment.</p>
-  </ng-template>
+<div class="lottery-container">
+    <h2>Lotterry draw and jackpot information</h2>
+   
+    <ng-container *ngIf="totalList && totalList.Draws.length > 0; else noDraws">
+        <div class="lottery-details">
+            <div class="row">
+                <h3 class="col">Draw name</h3>
+                <h3 class="col">Draw date</h3>
+                <h3 class="col">Draw number</h3>
+                <h3 class="col">Draw amount</h3>
+            </div>
+            <div *ngFor= "let lottery of totalList.Draws" class="row">
+                <div class="col">
+                    <p>{{lottery.DrawDisplayName}}</p>
+                </div>
+                <div class="col">
+                    <p>{{lottery.DrawDate | date:'dd-MM-yyyy'}}</p>
+                </div>
+                <div class="col">
+                    <p>{{lottery.DrawNumber}}</p>
+                </div>
+                <div class="col">
+                    <p>{{lottery.Div1Amount | currency : 'AU'}}</p>
+                </div> 
+            </div>  
+        </div>
+    </ng-container>
+    <ng-template #noDraws>
+        <p>There are no draws at the moment.</p>
+    </ng-template>
  
 </div>
+
+
